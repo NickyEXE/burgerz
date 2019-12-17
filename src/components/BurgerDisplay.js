@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const BurgerDisplay = (props) => {
   return (
     <div className="BurgerDisplay">
-      <img src={"" /* Insert burger Image URL here */}/>
+      <img src={props.imgURL} alt={props.name}/>
       <br/>
-      <h1>Insert Burger Name Here</h1>
+      <h1>{props.name}</h1>
       <br/>
-      <select onChange={console.log}>
+      <select value={props.category} onChange={(e)=> props.onChange(props.id, e.target.value)}>
         <option value="Relatable">Relatable</option>
         <option value="Bougie">Bougie</option>
       </select>
